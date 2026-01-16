@@ -34,7 +34,7 @@ No design system found.
 
 Options:
 1. Build UI → system will be established automatically
-2. Run /design-engineer extract → pull patterns from existing code
+2. Run /design-engineer:extract → pull patterns from existing code
 ```
 
 ## Implementation

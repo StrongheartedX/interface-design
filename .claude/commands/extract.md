@@ -5,8 +5,8 @@ Extract design patterns from existing code to create a system.
 ## Usage
 
 ```
-/design-engineer extract          # Extract from common UI paths
-/design-engineer extract <path>   # Extract from specific directory
+/design-engineer:extract          # Extract from common UI paths
+/design-engineer:extract <path>   # Extract from specific directory
 ```
 
 ## What to Extract

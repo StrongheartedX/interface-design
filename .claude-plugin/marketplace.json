@@ -1,16 +1,26 @@
 {
-  "name": "design-engineer-marketplace",
-  "description": "Design Engineer - Build interfaces with craft, memory, and enforcement",
-  "version": "2.3.0",
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "design-engineer",
+  "metadata": {
+    "description": "Design engineering for Claude Code. Build interfaces with craft, memory, and enforcement."
+  },
   "owner": {
-    "name": "Damola Akinleye"
+    "name": "Damola Akinleye",
+    "url": "https://github.com/Dammyjay93"
   },
   "plugins": [
     {
       "name": "design-engineer",
-      "description": "Design engineering for Claude Code. Build interfaces with craft, memory, and enforcement.",
-      "source": "./plugins/design-engineer",
-      "category": "design"
+      "description": "Design engineering for Claude Code. Build interfaces with craft, memory, and enforcement. Maintains consistent design decisions across sessions.",
+      "version": "2.3.0",
+      "author": {
+        "name": "Damola Akinleye",
+        "url": "https://github.com/Dammyjay93"
+      },
+      "source": "./",
+      "category": "design",
+      "homepage": "https://github.com/Dammyjay93/claude-design-engineer",
+      "tags": ["design", "design-system", "ui", "craft", "memory", "enforcement", "consistency", "tokens"]
     }
   ]
 }

@@ -1,7 +1,5 @@
 ---
 description: Design engineering for Claude Code. Build interfaces with craft, memory, and enforcement.
-allowed-tools: Read, Write, Edit, Glob, Grep, Bash
-argument-hint: [action] [path]
 ---
 
 # Design Engineer
@@ -64,13 +62,11 @@ Build interfaces with intention, consistency, and memory. This skill helps you e
 - No questions, no system.md
 - For quick prototypes/experiments
 
-## Commands
+## Related Commands
 
-- **status** → Show current design system state
-- **audit** → Validate existing code against system
-- **extract** → Extract patterns from existing code
-
-Run without arguments for smart suggestions based on project state.
+- **/design-engineer:status** → Show current design system state
+- **/design-engineer:audit** → Validate existing code against system
+- **/design-engineer:extract** → Extract patterns from existing code
 
 ---
 
@@ -361,7 +357,3 @@ Every interface should look designed by a team that obsesses over 1-pixel differ
 Different products want different things. A developer tool wants precision and density. A collaborative product wants warmth and space. A financial product wants trust and sophistication. Let the product context guide the aesthetic.
 
 The goal: intricate minimalism with appropriate personality. Same quality bar, context-driven execution.
-
-## Argument Handling
-
-$ARGUMENTS
