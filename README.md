@@ -1,7 +1,7 @@
 # Design Engineer
 
 <p align="center">
-  <strong>Craft · Memory · Enforcement</strong>
+  <strong>Craft · Memory · Consistency</strong>
 </p>
 
 <p align="center">
@@ -23,15 +23,15 @@
 
 ## What This Does
 
-When you build UI with Claude, design decisions get made: spacing values, colors, depth strategy, button heights. Without structure, those decisions drift across sessions.
+When you build UI with Claude, design decisions get made: spacing values, colors, depth strategy, surface elevation. Without structure, those decisions drift across sessions.
 
 **Design Engineer helps you:**
 
-1. **Craft** — Smart direction inference (dashboard → precision, settings → utility)
+1. **Craft** — Principle-based design that produces professional, polished interfaces
 2. **Memory** — Save decisions to `.design-engineer/system.md`, load automatically
-3. **Enforcement** — Validate UI code against your system, catch violations before you see them
+3. **Consistency** — Every component follows the same principles throughout the session
 
-Make choices once. Enforce them automatically.
+Make choices once. Apply them consistently.
 
 ## Before & After
 
@@ -45,7 +45,7 @@ Make choices once. Enforce them automatically.
 - System loads automatically each session
 - Patterns reused (Button: 36px, Card: 16px pad)
 - Spacing on grid (4px, 8px, 12px, 16px)
-- Violations caught before finishing
+- Consistent depth and surface treatment throughout
 
 See the difference: **[dashboard-v4-eta.vercel.app](https://dashboard-v4-eta.vercel.app)**
 
@@ -66,9 +66,9 @@ See the difference: **[dashboard-v4-eta.vercel.app](https://dashboard-v4-eta.ver
 Select `design-engineer` from the menu. Restart Claude Code after.
 
 Gets you:
-- Smart workflows (APPLY, ESTABLISH, EXTEND modes)
+- Principle-based craft for every UI component
 - Automatic system.md loading every session
-- Post-write validation hooks
+- Per-component design checkpoint
 - Commands (/design-engineer status, audit, extract)
 
 ### Manual (Advanced)
@@ -86,32 +86,27 @@ Restart Claude Code.
 
 ## How It Works
 
-### Smart Dispatcher
+### The Flow
 
-When you build UI, design-engineer automatically detects which mode to use:
+When you build UI with design-engineer:
 
-**APPLY MODE** (system exists)
+**If system.md exists:**
 ```
+✓ Reads skill files and principles
 ✓ Loads .design-engineer/system.md
-✓ Uses established patterns
-✓ Validates before finishing
-✓ Updates system if new patterns emerge
+✓ Applies established patterns
+✓ States design choices before each component
+✓ Offers to save new patterns
 ```
 
-**ESTABLISH MODE** (real project, no system)
+**If no system.md:**
 ```
-1. Scans project (package.json, framework, file structure)
-2. Infers product type (dashboard? marketing? docs?)
-3. Suggests direction based on context
-4. Asks ONE smart question with default
-5. Builds components
+1. Reads skill files and principles
+2. Assesses project context
+3. Suggests direction, asks for confirmation
+4. States design choices before each component
+5. Builds with consistent principles
 6. Offers to save system
-```
-
-**PRINCIPLES ONLY** (quick prototype)
-```
-✓ Just applies craft principles
-✓ No questions, no system.md
 ```
 
 ### Example: First Session
@@ -119,22 +114,26 @@ When you build UI, design-engineer automatically detects which mode to use:
 ```
 You: "Build a user dashboard with metrics cards"
 
-Claude (via design-engineer):
-Detected: Dashboard with data visualization
-Suggests: Precision & Density, Cool (slate), Borders-only
+Claude:
+This feels like a data-heavy dashboard — I'd suggest:
+- Depth: Borders-only (clean, technical)
+- Surfaces: Subtle elevation shifts
+- Spacing: 8px base
 
-Does this direction fit? (y/n/customize)
+Does this direction fit?
 
 [You: y]
 
-[Builds dashboard with tight spacing, borders, clean layout]
+Depth: borders-only
+Surfaces: 7% → 9% → 11% lightness scale
+Borders: rgba(255,255,255,0.06)
+Spacing: 8px base
 
-Created foundations:
-- Direction: Precision & Density
-- Depth: Borders-only
-- Patterns: MetricCard (border, 16px pad, 8px gap)
+[Builds dashboard with consistent depth, spacing, surfaces]
 
-Save to .design-engineer/system.md? (y)
+Want me to save these patterns to .design-engineer/system.md?
+
+[You: y]
 
 ✓ System saved
 ```
@@ -144,17 +143,20 @@ Save to .design-engineer/system.md? (y)
 ```
 You: "Add a settings page"
 
-Claude (via design-engineer):
-✓ Loaded system (Precision & Density, Borders-only)
-✓ Reusing MetricCard pattern
-✓ Building with established spacing grid
+Claude:
+✓ Loaded system.md
 
-[Builds settings page matching existing design]
+Depth: borders-only
+Surfaces: using established scale
+Borders: rgba(255,255,255,0.06)
+Spacing: 8px base
 
-✓ Self-validation passed
+[Builds settings page matching existing system]
+
+Want me to save any new patterns?
 ```
 
-The system **remembers** and **enforces** automatically.
+The system **remembers** across sessions.
 
 ---
 
@@ -200,7 +202,7 @@ This file loads automatically at session start. Claude sees it and maintains con
 ## Commands
 
 ```bash
-/design-engineer:init           # Smart dispatcher (detects mode automatically)
+/design-engineer:init           # Start building with design principles
 /design-engineer:status         # Show current system
 /design-engineer:audit <path>   # Check code against system
 /design-engineer:extract        # Extract patterns from existing code
@@ -220,28 +222,6 @@ The skill infers direction from project context, but you can customize:
 | **Boldness & Clarity** | High contrast, dramatic space | Modern dashboards, data-heavy apps |
 | **Utility & Function** | Muted, functional density | GitHub-style tools |
 | **Data & Analysis** | Chart-optimized, numbers-first | Analytics, BI tools |
-
----
-
-## Enforcement
-
-The post-write validation hook catches violations:
-
-```
-=== DESIGN SYSTEM CHECK ===
-
-Found inconsistencies with your defined system:
-
-  [spacing] 17px is not on your 4px grid
-    -> Consider 16px, or update your spacing base in system.md
-
-  [depth] Shadow detected but your system uses borders-only depth
-    -> Use border instead, or update your depth strategy
-
-===========================
-```
-
-Claude fixes these automatically before you see the code.
 
 ---
 
