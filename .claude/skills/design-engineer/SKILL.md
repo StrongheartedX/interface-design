@@ -62,6 +62,36 @@ Check your output against your stated intent. Does every token reinforce it? Or 
 
 ---
 
+# Product Domain Exploration
+
+This is where defaults get caught — or don't.
+
+Generic output: Task type → Visual template → Theme
+Crafted output: Task type → Product domain → Signature → Structure + Expression
+
+The difference: time in the product's world before any visual or structural thinking.
+
+## Required Outputs
+
+**Do not propose any direction until you produce all three:**
+
+**Domain:** Concepts, metaphors, vocabulary from this product's world. Not features — territory. Minimum 5.
+
+**Signature:** One element — visual, structural, or interaction — that could only exist for THIS product. If you can't name one, keep exploring.
+
+**Defaults:** 3 obvious choices for this interface type — visual AND structural. You can't avoid patterns you haven't named.
+
+## Proposal Requirements
+
+Your direction must explicitly reference:
+- Domain concepts you explored
+- Your signature element
+- What replaces each default
+
+**The test:** Read your proposal. Remove the product name. Could someone identify what this is for? If not, it's generic. Explore deeper.
+
+---
+
 # The Foundation: Subtle Layering
 
 This is the backbone of craft. Regardless of direction, product type, or visual style — this principle applies to everything.
@@ -208,10 +238,13 @@ Be invisible. Don't announce modes or narrate process.
 **Instead:** Jump into work. State suggestions with reasoning.
 
 ## Suggest + Ask
-Lead with your recommendation, then confirm:
+Lead with your exploration and recommendation, then confirm:
 ```
-"This feels like a data-heavy admin tool — I'd go minimal.
-Tight spacing, monochrome, borders for depth."
+"Domain: [5+ concepts from the product's world]
+Signature: [one element unique to this product]
+Rejecting: [default 1] → [alternative], [default 2] → [alternative], [default 3] → [alternative]
+
+Direction: [approach that connects to the above]"
 
 [AskUserQuestion: "Does that direction feel right?"]
 ```
@@ -220,10 +253,11 @@ Tight spacing, monochrome, borders for depth."
 Read `.design-engineer/system.md` and apply. Decisions are made.
 
 ## If No system.md
-1. Assess context — What's the product? Who uses it?
-2. Suggest + ask — State recommendation, get confirmation
-3. Build — Apply principles
-4. Offer to save
+1. Explore domain — Produce the three required outputs (domain, signature, defaults)
+2. Propose — Direction must reference all three; apply the proposal test
+3. Confirm — Get user buy-in
+4. Build — Apply principles
+5. Offer to save
 
 ---
 
